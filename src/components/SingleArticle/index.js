@@ -5,6 +5,9 @@ const SingleArticle = ({ articles }) => {
   const { id } = useParams();
   const singleArticle = articles.find(article => article.id === id);
   return (
+    <>
+    {
+    singleArticle &&(
     <div className='singleArticle'>
       <h1>{singleArticle.title}</h1>
       <img
@@ -14,7 +17,8 @@ const SingleArticle = ({ articles }) => {
       <p>
         {singleArticle.body}
       </p>
-    </div>
+    </div>)}
+    </>
   );
 };
 
